@@ -8,7 +8,39 @@ Me llamó la atención la plataforma Strudel, no la conocía antes y me parece u
 
 ### Experimentos
 
-### Versión #1
+
+### Versión 1
+
+```js
+const ratchet = register('ratchet', (pat) => pat.sometimes(ply(2)))
+
+setcpm(24.5)
+
+//piano
+$: s("bd*10")
+  .note("c2 c2 c4 c2 g2 g2 g1 g2 c2 c4 c2")
+  .gain(1)
+  .sound("gm_epiano1")
+  
+
+//kick
+
+$: s("bd*6")
+  .gain(1)
+  .sound("ajkpercusyn_bd")
+  .note("c4 c6 c4 c2 c2")
+  .speed("[1 1 0.8 1]*3")
+
+//Claps
+
+$: s("~ ~ cp ~ ~ ~ cp ~")
+  .sound("rm50_cp")
+  .gain(0.45)
+
+```
+
+
+### Versión #2
 
 ```js
 const ratchet = register('ratchet', (pat) => pat.sometimes(ply(2)))

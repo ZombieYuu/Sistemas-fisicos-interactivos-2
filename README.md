@@ -3,6 +3,8 @@
 
 ## Fase de investigación: 
 
+## Exploración de audio:
+
 Me llamó la atención la plataforma Strudel, no la conocía antes y me parece una herramienta interesante para experimentar.
 
 
@@ -143,3 +145,28 @@ $: note("e5 ~ g5 ~ c6 ~ g5 ~")
   .slow(2)
   .room(0.5)
 ```
+
+## Exploración de obra generativa:
+
+- **1. Intención: ¿Qué transformación, sensación o idea debe experimentar el espectador?**
+Quiero que el espectador sienta tranquilidad y serenidad con mi obra, pero a su vez esté expectante de lo que seguirá.
+
+- **2. Entidades: ¿Qué elementos existen en el mundo del sistema? Partículas, campos, cuerpos, señales, memorias, trazos, superficies, agentes.**
+
+  
+- **3. Relaciones: ¿Cómo se afectan mutuamente? Atracción, repulsión, contagio, acumulación, erosión, cooperación, competencia.**
+
+  
+- **4. Entradas: ¿Qué alimenta al sistema? Audio, cuerpo, sensores, tiempo, datos, decisiones del participante.**
+
+  
+- **5. Reglas: ¿Cómo se transforma el estado del sistema?**
+
+  
+- **6. Invariantes: ¿Qué no puede cambiar sin que la propuesta pierda identidad? Paleta de colores, densidad, ritmo, lenguaje de movimiento, composición, comportamiento.**
+
+  
+- **7. Variabilidad: ¿Qué debería ser diferente en cada ejecución? Rutas, agrupaciones, tiempos internos, texturas, conexiones, detalles.**
+
+  
+- **8. Curaduría y reflexión: ¿Qué resultados son significativos y cuáles son solamente accidentes interesantes?**

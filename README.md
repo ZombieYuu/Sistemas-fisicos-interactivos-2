@@ -165,8 +165,90 @@ Quiero que el espectador sienta tranquilidad y serenidad con mi obra, pero a su 
   
 - **6. Invariantes: ¿Qué no puede cambiar sin que la propuesta pierda identidad? Paleta de colores, densidad, ritmo, lenguaje de movimiento, composición, comportamiento.**
 
-  
+
 - **7. Variabilidad: ¿Qué debería ser diferente en cada ejecución? Rutas, agrupaciones, tiempos internos, texturas, conexiones, detalles.**
 
   
 - **8. Curaduría y reflexión: ¿Qué resultados son significativos y cuáles son solamente accidentes interesantes?**
+
+## Código adaptado para TouchDesigner:
+
+```js
+
+const { visualid } = createParams('visualid')
+const ratchet = register('ratchet', (pat) => pat.sometimes(ply(2)))
+
+setcpm(24.5)
+
+// Piano
+const harmony = note("c2 ~ e2 ~ g2 ~ e2 ~")
+  .s("gm_epiano1")
+  .gain(0.8)
+  .slow(2)
+  .room(0.3)
+  .visualid("harmony")
+
+// Kick
+const drum_bd = s("bd ~ ~ ~ bd ~ ~ ~")
+  .sound("ajkpercusyn_bd")
+  .gain(0.8)
+  .visualid("drum_bd")
+
+// Clap
+const drum_cp = s("~ ~ cp ~ ~ ~ cp ~")
+  .sound("rm50_cp")
+  .gain(0.45)
+  .lpf(slider (1645.6,200,2800))
+  .visualid("drum_cp")
+
+// Hi-Hat
+const drum_hh = s("~ hh ~ hh ~ hh ~ hh")
+  .gain(0.18)
+  .speed(0.95)
+  .visualid("drum_hh")
+
+// Bajo
+const drum_oh = note("c2 ~ g1 ~")
+  .s("gm_fingerbass")
+  .gain(0.55)
+  .slow(2)
+  .visualid("drum_oh")
+
+// Pad
+const melody = note("<c4 e4 g4>")
+  .s("gm_pad2warm")
+  .gain(0.25)
+  .slow(8)
+  .room(0.9)
+  .size(0.95)
+  .visualid("melody")
+
+// Melodía
+$: note("e5 ~ g5 ~ c6 ~ g5 ~")
+  .s("gm_musicbox")
+  .gain(0.3)
+  .slow(2)
+  .room(0.5)
+  .visualid("melody")
+
+$:stack(
+
+harmony,
+harmony.osc(),
+
+drum_bd,
+drum_bd.osc(),
+
+drum_cp,
+drum_cp.osc(),
+
+drum_hh,
+drum_hh.osc(),
+
+drum_oh,
+drum_oh.osc(),
+
+melody,
+melody.osc()    
+)
+```
